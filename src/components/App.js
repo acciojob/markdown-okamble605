@@ -3,11 +3,11 @@ import ReactMarkdown from "react-markdown";
 import "./App.css";
 
 const App = () => {
-  const [markdown, setMarkdown] = useState("");
+  const [markdown, setMarkdown] = useState("# Hello, Markdown!");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 500); // Simulate API call delay
+    setTimeout(() => setLoading(false), 1000);
   }, []);
 
   return (
@@ -20,7 +20,6 @@ const App = () => {
             className="textarea"
             value={markdown}
             onChange={(e) => setMarkdown(e.target.value)}
-            placeholder="Write your markdown here..."
           />
           <div className="preview">
             <ReactMarkdown>{markdown}</ReactMarkdown>
