@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import "./styles/App.css";
+import "./App.css";
 
 const App = () => {
   const [markdown, setMarkdown] = useState("# Hello, Markdown!");
