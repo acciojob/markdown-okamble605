@@ -2,31 +2,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
 .container {
   display: flex;
   width: 80%;
-  max-width: 900px;
-  gap: 20px;
+  height: 60vh;
+  border: 1px solid #ccc;
 }
 
 .textarea {
   width: 50%;
-  height: 400px;
+  height: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 }
 
 .preview {
   width: 50%;
-  height: 400px;
+  height: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  background: #f4f4f4;
   overflow-y: auto;
+  background: #f8f8f8;
 }
 
 .loading {
