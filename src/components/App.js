@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from "react";
-import ReactMarkdown from "react-markdown";
+import { marked } from "marked";
 import "./App.css";
 
-const App = () => {
-  const [markdown, setMarkdown] = useState("# Hello, Markdown!");
-  const [loading, setLoading] = useState(true);
+const MarkdownEditor = () => {
+  const [markdown, setMarkdown] = useState("# Hello world");
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
+    // Set marked.js options if needed
+    marked.setOptions({
+      breaks: true,
+    });
   }, []);
 
   return (
     <div className="app">
-      {loading ? (
-        <p className="loading">Loading...</p>
-      ) : (
-        <div className="container">
-          <textarea
-            className="textarea"
-            value={markdown}
-            onChange={(e) => setMarkdown(e.target.value)}
-          />
-          <div className="preview">
-            <ReactMarkdown>{markdown}</ReactMarkdown>
-          </div>
-        </div>
-      )}
+      <textarea
+        className="textarea"
+        value={markdown}
+        onChange={(e) => setMarkdown(e.target.value)}
+        placeholder="Write Markdown here..."
+      />
+      <div
+        className="preview"
+        dangerouslySetInnerHTML={{ __html: marked(markdown) }}
+      />
     </div>
   );
 };
 
-export default App;
+export default MarkdownEditor;
