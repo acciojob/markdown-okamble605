@@ -3,7 +3,7 @@ import { marked } from "marked";
 import "./App.css";
 
 const MarkdownEditor = () => {
-  const [markdown, setMarkdown] = useState("# Welcome to Markdown!");
+  const [markdown, setMarkdown] = useState("# Hello world!");
 
   useEffect(() => {
     marked.setOptions({ breaks: true });
